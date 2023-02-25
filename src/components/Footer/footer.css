@@ -1,0 +1,53 @@
+.footer{
+   padding-top: 40px; 
+   padding-bottom: 30px;
+   background:rgb(26, 26, 74);
+}
+
+ .logo-f {
+    background: rgb(255, 255, 255);
+    height: 30px;
+    width: 30px;
+    border-radius: 70%;
+    
+}
+
+.footer__text{
+    line-height: 30px;
+    color: rgba(255, 255, 255, 0.988);
+}
+
+.footer__quick-links ul li  {
+    background: transparent !important;
+}
+
+.footer__quick-links ul li a {
+    color: rgb(255, 255, 255);
+}
+
+.quick__links-title{
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.footer__contact li span, 
+.footer__contact li p{
+     color: rgb(255, 255, 255);
+}
+
+.footer__contact li span{
+    font-size: 1.2rem;
+}
+
+.footer__contact li p{
+    font-size: 0.9rem;
+}
+
+.footer__copyright{
+    color: rgb(255, 255, 255);
+    font-size: 0.9rem;
+    margin-top: 50px;
+    align-items: center;
+}
+
