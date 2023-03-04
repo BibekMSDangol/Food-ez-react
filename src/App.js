@@ -7,12 +7,17 @@ import {
   useMatch,
 } from "react-router-dom";
 import Register from "./components/register";
-import "./App.css";
+// import "./App.css";
 import Login from "./components/login";
 import Menu from "./components/menu";
 import Foods from "./components/food";
 import Home from "./components/home";
 import { useState } from "react";
+// import './components/design.css'
+// import { Navbar } from "reactstrap";
+import Navbar from './components/navbar';
+import Lg from "./components/lg";
+import Signup from "./components/reg";
 
 // function App() {
 //   const [foods, setFoods] = useState([]);
@@ -64,12 +69,49 @@ import { useState } from "react";
 //     </>
 //   );
 // }
+// function App(){
+//   return(
+//     <Router>
+//     <div className="App">
+//       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+//         <div className="container">
+//           <Link className="navbar-brand" to={'/login'}>
+//             FoodEz
+//           </Link>
+//           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+//             <ul className="navbar-nav ml-auto">
+//               <li className="nav-item">
+//                 <Link className="nav-link" to={'/login'}>
+//                   Login
+//                 </Link>
+//               </li>
+//               <li className="nav-item">
+//                 <Link className="nav-link" to={'/register'}>
+//                   Register
+//                 </Link>
+//               </li>
+//             </ul>
+//           </div>
+//         </div>
+//       </nav>
+//       <div className="auth-wrapper">
+//         <div className="auth-inner">
+//           <Routes>
+//             <Route exact path="/" element={<Login />} />
+//             <Route path="/login" element={<Login />} />
+//             <Route path="/register" element={<Register />} />
+//           </Routes>
+//         </div>
+//       </div>
+//     </div>
+//   </Router>
+//   )
+// }
 function App(){
   return(
     <div>
-      <Login/> 
+      <Signup/>
     </div>
   )
 }
-
 export default App;

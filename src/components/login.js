@@ -1,7 +1,7 @@
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { useState } from "react";
 import userSerivice from "../services/userService";
-import "./login.css";
+
 // import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -14,10 +14,10 @@ const Login = () => {
       .LoginUser(username, password)
       .then((response) => {
         console.log(response.data);
-        // window.localStorage.setItem("token", response.data.token);
-        // window.alert("Logged In");
-        // let userData = response.data;
-        // console.log(userData);
+        window.localStorage.setItem("token", response.data.token);
+        window.alert("Logged In");
+        let userData = response.data;
+        console.log(userData);
       })
       .catch((err) => window.alert(err.response.data.message));
   };

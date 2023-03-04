@@ -19,12 +19,13 @@ body{
     font-weight: 400;
     color: #412277;
 }
-.container{
-    width: 50%;
+.register{
+    width: 80%;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
+    border-radius: 8px;
     height: 90vh;
     background-color: #f8f9fb;
     display: flex;
@@ -35,7 +36,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 55%;
+    width: 100%;
 }
 .image{
     width: 45%;
@@ -56,13 +57,18 @@ body{
     width: 80%;
     justify-content: center;
 }
+.wrap1{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+}
 .f1{
-    border-bottom:2px solid #b2b2b2 ;
+
     width: 40%;
     position: relative;
 }
 .f2{
-    border-bottom:2px solid #b2b2b2 ;
+
     margin-left: auto;
     width: 50%;
     position: relative;

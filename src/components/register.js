@@ -9,19 +9,19 @@ import {
   Button,
   FormFeedback,
 } from "reactstrap";
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBCard,
-  MDBCardBody,
-  MDBCardImage,
-  MDBRow,
-  MDBCol,
-  MDBInput,
-  MDBRadio,
-  MDBSelect,
-} from "mdb-react-ui-kit";
-
+// import {
+//   MDBBtn,
+//   MDBContainer,
+//   MDBCard,
+//   MDBCardBody,
+//   MDBCardImage,
+//   MDBRow,
+//   MDBCol,
+//   MDBInput,
+//   MDBRadio,
+//   MDBSelect,
+// } from "mdb-react-ui-kit";
+import "./regg.css";
 const Register = () => {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -57,7 +57,7 @@ const Register = () => {
   return (
     <div className="register">
       <h1 className="h1">Registration</h1>
-      <Form onSubmit={handleRegister} className="flex flex-col">
+      <Form onSubmit={handleRegister} className="form">
         <div className="wrap">
           <div className="f1">
             <FormGroup>
@@ -78,52 +78,66 @@ const Register = () => {
               </FormFeedback>
             </FormGroup>
           </div>
-
-          <FormGroup>
-            <Label for="Last Name">Last Name</Label>
-            <Input
-              id="lname"
-              name="lname"
-              placeholder="Enter your Last Name"
-              type="text"
-              value={lname}
-              onChange={(event) => setLname(event.target.value)}
-            />
-            <FormFeedback>
-              "Username should be longer then 5 characters"
-            </FormFeedback>
-          </FormGroup>
+          <div className="f2">
+            <FormGroup>
+              <Label for="Last Name" className="label">
+                Last Name
+              </Label>
+              <Input
+                className="input"
+                id="lname"
+                name="lname"
+                placeholder="Enter your Last Name"
+                type="text"
+                value={lname}
+                onChange={(event) => setLname(event.target.value)}
+              />
+              <FormFeedback>
+                "Username should be longer then 5 characters"
+              </FormFeedback>
+            </FormGroup>
+          </div>
         </div>
-        <FormGroup>
-          <Label for="username">Username</Label>
-          <Input
-            invalid={usernamelen}
-            id="username"
-            name="username"
-            placeholder="Enter your Username"
-            type="text"
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
-          />
-          <FormFeedback>
-            "Username should be longer then 5 characters"
-          </FormFeedback>
-        </FormGroup>
-        <FormGroup>
-          <Label for="contact">Contact</Label>
-          <Input
-            invalid={contactlen}
-            id="contact"
-            name="contact"
-            placeholder="Enter your Contact"
-            type="number"
-            value={contact}
-            onChange={(event) => setContact(event.target.value)}
-          />
-          <FormFeedback>
-            "Username should be longer then 5 characters"
-          </FormFeedback>
-        </FormGroup>
+        <div className="wrap1">
+          <div className="f1">
+            <FormGroup>
+              <Label for="username" className="label">
+                Username
+              </Label>
+              <Input
+                className="input"
+                invalid={usernamelen}
+                id="username"
+                name="username"
+                placeholder="Enter your Username"
+                type="text"
+                value={username}
+                onChange={(event) => setUsername(event.target.value)}
+              />
+              <FormFeedback>
+                "Username should be longer then 5 characters"
+              </FormFeedback>
+            </FormGroup>
+          </div>
+          <div className="f2">
+            <FormGroup>
+              <Label for="contact" className="label">
+                Contact
+              </Label>
+              <Input
+                className="input"
+                invalid={contactlen}
+                id="contact"
+                name="contact"
+                placeholder="Enter your Contact"
+                type="text"
+                value={contact}
+                onChange={(event) => setContact(event.target.value)}
+              />
+              <FormFeedback>"Contact should be 10 digits"</FormFeedback>
+            </FormGroup>
+          </div>
+        </div>
         <FormGroup>
           <Label for="email">Email</Label>
           <Input
@@ -150,7 +164,7 @@ const Register = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="confirmPassword">Password</Label>
+          <Label for="confirmPassword">Confirm Password</Label>
           <Input
             invalid={status}
             id="confirmPassword"
