@@ -48,7 +48,7 @@ const Foods = ({ foods, setFoods }) => {
           return (
             <ListGroupItem>
               <ListGroupItemHeading key={food._id}>
-                {book.title}{" "}
+                {food.name}{" "}
                 <Badge pill color="clear">
                   <Link to = {`/food/${food._id}`}>{food.reviews.length} reviews </Link>
                 </Badge>
@@ -58,7 +58,7 @@ const Foods = ({ foods, setFoods }) => {
               <Button
                 color="danger"
                 onClick={() => {
-                  handleDelete(book._id);
+                  handleDelete(food._id);
                 }}
               >
                 Delete

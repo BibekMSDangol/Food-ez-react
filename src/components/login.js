@@ -1,18 +1,19 @@
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { useState } from "react";
 import userSerivice from "../services/userService";
+import "./login.css";
 // import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-//   const navigate = useNavigate();
+  //   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
     userSerivice
       .LoginUser(username, password)
       .then((response) => {
-        console.log(response.data)
+        console.log(response.data);
         // window.localStorage.setItem("token", response.data.token);
         // window.alert("Logged In");
         // let userData = response.data;
@@ -22,13 +23,15 @@ const Login = () => {
   };
   return (
     <>
+
+      <Form className="form">
       <div>
         <h1>Login Form</h1>
       </div>
-      <Form>
         <FormGroup>
           <Label for="username">Username</Label>
           <Input
+            className="wrap"
             id="username"
             name="username"
             placeholder="Username"
