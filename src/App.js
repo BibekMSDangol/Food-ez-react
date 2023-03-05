@@ -9,15 +9,15 @@ import {
 import Register from "./components/register";
 // import "./App.css";
 import Login from "./components/login";
-import Menu from "./components/menu";
 import Foods from "./components/food";
 import Home from "./components/home";
 import { useState } from "react";
 // import './components/design.css'
 // import { Navbar } from "reactstrap";
-import Navbar from './components/navbar';
+import Navbar from './components/navb';
 import Lg from "./components/lg";
 import Signup from "./components/reg";
+import FoodDetails from "./components/foodDetails";
 
 // function App() {
 //   const [foods, setFoods] = useState([]);
@@ -48,18 +48,18 @@ import Signup from "./components/reg";
 //         {/* Inital route '/' */}
 //         <Link to={"/"}>Home Page</Link>
 //         <br></br>
-//         <Link to={"/food"}>Books</Link>
+//         <Link to={"/food"}>Foods</Link>
 //         <br></br>
 
 //         {/* Pages to route */}
 //         <Routes>
 //           <Route path="/" element={<Home />} />
-//           <Route path="/login" element={<Login />} />
-//           <Route path="/register" element={<Register />} />
-//           {/* <Route
+//           <Route path="/login" element={<Lg />} />
+//           <Route path="/register" element={<Signup />} />
+//           <Route
 //             path="/food/:foodId"
-//             element={<BookDetails food={food} />}
-//           ></Route> */}
+//             element={<FoodDetails food={food} />}
+//           ></Route>
 //           <Route
 //             path="/food"
 //             element={<Foods foods={foods} setFoods={setFoods} />}
@@ -110,7 +110,7 @@ import Signup from "./components/reg";
 function App(){
   return(
     <div>
-      <Signup/>
+      <Navbar/>
     </div>
   )
 }

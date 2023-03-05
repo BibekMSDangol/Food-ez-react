@@ -51,14 +51,14 @@ const Signup = () => {
             className="w-150 h-100 object-fit-contain"
           />
         </Col>
-        <Col md={6} className="bg-light p-5">
+        <Col md={6} className="bg-white p-5">
           <h1 className="mb-4">Sign Up</h1>
           <Form onSubmit={handleRegister}>
             <Row>
               <Col md={6}>
                 <Form.Group>
                   <Form.Label>First Name</Form.Label>
-                  <Form.Control
+                  <Input
                     type="text"
                     placeholder="Enter first name"
                     value={fname}
@@ -121,7 +121,7 @@ const Signup = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
-            <Form.Group>
+            {/* <Form.Group>
               <Form.Label>Confirm Password</Form.Label>
               <Input
                 invalid={status}
@@ -131,7 +131,7 @@ const Signup = () => {
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
               <FormFeedback invalid>"Passwords dont match"</FormFeedback>
-            </Form.Group>
+            </Form.Group> */}
 
             <Button variant="primary" type="submit" className="w-100 mt-3">
               Sign Up

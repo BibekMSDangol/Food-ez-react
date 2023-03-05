@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import userSerivice from "../services/userService";
+import { useNavigate } from "react-router-dom";
 
 const Lg = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   //   const handleSubmit = (e) => {
   //     e.preventDefault();
@@ -21,6 +23,7 @@ const Lg = () => {
         window.alert("Logged In");
         let userData = response.data;
         console.log(userData);
+        navigate("/food", { userData: userData });
       })
       .catch((err) => window.alert(err.response.data.message));
   };
@@ -33,7 +36,7 @@ const Lg = () => {
           <Form.Label>Username:</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter username"
+            placeholder="Enter your username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />

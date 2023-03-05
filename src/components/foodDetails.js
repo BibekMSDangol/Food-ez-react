@@ -17,13 +17,13 @@ import {
             <CardTitle>{food.name}</CardTitle>
             <CardText>{food.price}</CardText>
           </CardBody>
-          <ListGroup flush>
+          {/* <ListGroup flush>
             {food.restaurant.map((restaurant) => {
               return (
                 <ListGroupItem key={restaurant._id}>{restaurant.name}</ListGroupItem>
               );
             })}
-          </ListGroup>
+          </ListGroup> */}
         </Card>
       </div>
     );
