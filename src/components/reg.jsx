@@ -53,7 +53,7 @@ const Signup = () => {
         </Col>
         <Col md={6} className="bg-white p-5">
           <h1 className="mb-4">Sign Up</h1>
-          <Form onSubmit={handleRegister}>
+          <Form >
             <Row>
               <Col md={6}>
                 <Form.Group>
@@ -133,7 +133,7 @@ const Signup = () => {
               <FormFeedback invalid>"Passwords dont match"</FormFeedback>
             </Form.Group> */}
 
-            <Button variant="primary" type="submit" className="w-100 mt-3">
+            <Button variant="primary" type="submit" className="w-100 mt-3" onClick={handleRegister}>
               Sign Up
             </Button>
           </Form>

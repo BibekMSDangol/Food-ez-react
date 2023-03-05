@@ -10,22 +10,22 @@ import {
 import foodService from "../services/foodService";
 
 const Foods = ({ foods, setFoods }) => {
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
   useEffect(() => {
     foodService
       .getAll()
       .then((res) => {
         console.log(res.data);
-        setFoods(res.data);
+        setFoods(res.data.allFood);
       })
       .catch((err) => console.log(err));
   }, []);
   const handleAdd = (e) => {
     e.preventDefault();
-    console.log(author, title);
+    console.log(price, name);
     foodService
-      .create({ title, author })
+      .create({ name, price })
       .then((res) => setFoods(foods.concat(res.data)))
       .catch((err) => console.log(err));
   };
@@ -50,10 +50,10 @@ const Foods = ({ foods, setFoods }) => {
               <ListGroupItemHeading key={food._id}>
                 {food.name}{" "}
                 <Badge pill color="clear">
-                  <Link to = {`/food/${food._id}`}>{food.reviews.length} reviews </Link>
+                  {/* <Link to = {`/food/${food._id}`}>{food.reviews.length} reviews </Link> */}
                 </Badge>
               </ListGroupItemHeading>
-              <ListGroupItemText>{food.author}</ListGroupItemText>
+              <ListGroupItemText>{food.price}</ListGroupItemText>
               <Button color="success">Edit</Button>
               <Button
                 color="danger"
@@ -67,34 +67,34 @@ const Foods = ({ foods, setFoods }) => {
           );
         })}
       </ListGroup>{" "}
-      <Form onSubmit={handleAdd}>
+      <Form >
         <FormGroup>
-          <Label for="title">Title</Label>
+          <Label for="name">Name</Label>
           <Input
-            id="title"
-            name="title"
-            placeholder="Enter a book title here"
+            id="name"
+            name="name"
+            placeholder="Enter a food item name"
             type="text"
-            value={title}
+            value={name}
             onChange={(e) => {
-              setTitle(e.target.value);
+              setName(e.target.value);
             }}
           />
         </FormGroup>
         <FormGroup>
-          <Label for="author">Author</Label>
+          <Label for="price">Price</Label>
           <Input
-            id="author"
-            name="author"
-            placeholder="Enter book author here"
-            type="text"
-            value={author}
+            id="price"
+            name="price"
+            placeholder="Enter the price"
+            type="number"
+            value={price}
             onChange={(e) => {
-              setAuthor(e.target.value);
+              setPrice(e.target.value);
             }}
           />
         </FormGroup>
-        <Button color="primary">Add Food</Button>
+        <Button color="primary" onClick={handleAdd}>Add Food</Button>
       </Form>
     </div>
   );

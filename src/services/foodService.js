@@ -1,6 +1,13 @@
 import axios from "axios";
 
 const baseUrl = "http://localhost:3000/food";
+export const URLS={
+  baseUrl:baseUrl,
+  loginURL:"user/login",
+  regsiterURL : "user/register",
+  addProductURL:"books/add",
+  viewProductURL:"books"
+}
 const config = {
     headers: {
       Authorization: `bearer ${window.localStorage.getItem("token")}`,

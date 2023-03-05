@@ -10,14 +10,23 @@ import Register from "./components/register";
 // import "./App.css";
 import Login from "./components/login";
 import Foods from "./components/food";
-import Home from "./components/home";
+import foodp from "./components/fp";
 import { useState } from "react";
 // import './components/design.css'
 // import { Navbar } from "reactstrap";
-import Navbar from './components/navb';
+import Navbar from "./components/navbar";
 import Lg from "./components/lg";
 import Signup from "./components/reg";
 import FoodDetails from "./components/foodDetails";
+import Footer from "./components/footer";
+import NewFooter from "./components/newfooter";
+import Product from "./components/product";
+import Home from "./components/home";
+import Products from "./components/products";
+import Foodp from "./components/fp";
+import AddProductForm from "./components/addfood";
+import FoodService from "./services/foodService";
+import NavigationBar from "./components/navigation";
 
 // function App() {
 //   const [foods, setFoods] = useState([]);
@@ -107,11 +116,13 @@ import FoodDetails from "./components/foodDetails";
 //   </Router>
 //   )
 // }
-function App(){
-  return(
-    <div>
-      <Navbar/>
-    </div>
-  )
+function App() {
+  let food = {name:"name", price:"price"}
+  const [foods , setFoods] = useState([])
+  return (
+    <>
+      <Foods foods={foods} setFoods={setFoods}/>
+    </>
+  );
 }
 export default App;

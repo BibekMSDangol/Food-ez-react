@@ -30,7 +30,7 @@ const Lg = () => {
 
   return (
     <Container className="d-flex justify-content-center align-items-center vh-100">
-      <Form onSubmit={handleLogin}>
+      <Form >
         <h1 className="mb-4">Login</h1>
         <Form.Group>
           <Form.Label>Username:</Form.Label>
@@ -52,10 +52,10 @@ const Lg = () => {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit" className="w-100 mt-3 mb-4">
+        <Button variant="primary" type="submit" className="w-100 mt-3 mb-4" onClick={handleLogin}>
           Login
         </Button>
-        <span>Don't have an account? Sign up </span>
+        <span>Don't have an account? <u>Sign up </u></span>
       </Form>
     </Container>
   );
